@@ -3,33 +3,33 @@ const {Schema, model} = require('mongoose');
 const EmployeeSchema = Schema({
     nombres: {
         type: String,
-        require: true
+        required: true
     },
     apellidos: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     cedula: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     fechaNacimiento: {
         type: String,
-        require: true
+        required: true
     },
     numeroINSS: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     uid: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
 })

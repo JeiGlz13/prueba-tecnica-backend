@@ -17,8 +17,10 @@ router.post('/create', [
     check('uid', 'El uid es obligatorio').not().isEmpty(),
     validarCampos
 ] ,agregarEmpleado);
-router.delete('/delete', eliminarEmpleado);
-router.put('/update', 
+
+router.delete('/:id', eliminarEmpleado);
+
+router.put('/:id', 
 [ 
     check('nombres', 'El nombre es obligatorio').not().isEmpty(),
     check('apellidos', 'El apellido es obligatorio').not().isEmpty(),
