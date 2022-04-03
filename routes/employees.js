@@ -14,7 +14,6 @@ router.post('/create', [
     check('numeroINSS', 'El numero de INSS es obligatorio').not().isEmpty(),
     check('cedula', 'La cedula es obligatorio').not().isEmpty(),
     check('fechaNacimiento', 'La fecha de nacimiento es obligatorio').not().isEmpty(),
-    check('uid', 'El uid es obligatorio').not().isEmpty(),
     validarCampos
 ] ,agregarEmpleado);
 
@@ -28,7 +27,6 @@ router.put('/:id',
     check('numeroINSS', 'El numero de INSS es obligatorio').not().isEmpty(),
     check('cedula', 'La cedula es obligatorio').not().isEmpty(),
     check('fechaNacimiento', 'La fecha de nacimiento es obligatorio').not().isEmpty(),
-    check('uid', 'El uid es obligatorio').not().isEmpty(),
     validarCampos
 ]
 ,actualizarEmpleado)

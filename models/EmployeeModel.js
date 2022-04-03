@@ -27,11 +27,6 @@ const EmployeeSchema = Schema({
         required: true,
         unique: true
     },
-    uid: {
-        type: String,
-        required: true,
-        unique: true
-    },
 })
 
 module.exports = model('Employee', EmployeeSchema);

@@ -13,15 +13,14 @@ const leerEmpleados = async (req, res = response) => {
 }
 
 const agregarEmpleado = async (req, res = response) => {
-    const { email, cedula, numeroINSS, uid} = req.body;
+    const { email, cedula, numeroINSS} = req.body;
 
     try {
         const employeeEmail = await EmployeeModel.findOne({email});
         const employeeCedula = await EmployeeModel.findOne({cedula});
         const employeeINSS = await EmployeeModel.findOne({numeroINSS});
-        const employeeUID = await EmployeeModel.findOne({uid});
 
-        if(employeeEmail || employeeCedula || employeeINSS || employeeUID) {
+        if(employeeEmail || employeeCedula || employeeINSS) {
             res.status(500).json({
                 ok: false,
                 msg: 'Un usuario existe con esos datos'
@@ -33,13 +32,7 @@ const agregarEmpleado = async (req, res = response) => {
         res.json({
             ok: true,
             msg: 'Se agrego un empleado',
-            uid: employee.uid,
-            nombres: employee.nombres,
-            apellidos: employee.apellidos,
-            cedula: employee.cedula,
-            email: employee.email,
-            numeroINSS: employee.numeroINSS,
-            fechaNacimiento: employee.fechaNacimiento
+            employee
         })
     } catch (error) {
         console.log(error);
