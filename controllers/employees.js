@@ -34,7 +34,7 @@ const agregarEmpleado = async (req, res = response) => {
             msg: 'Se agrego un empleado',
             employee
         })
-    } catch (error) {
+    }catch (error) {
         console.log(error);
         res.status(500).json({
             ok: false,
